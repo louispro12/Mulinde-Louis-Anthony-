@@ -9,6 +9,16 @@
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s; }
     .fade-in.show { opacity: 1; transform: translateY(0); }
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-33.33%); }
+      66%  { transform: translateX(-66.66%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-slide {
+      width: 300%;
+      animation: slide 12s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">  <!-- Navbar -->  <nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
@@ -101,12 +111,17 @@
     </div>
   </div>
 
-  <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden fade-in">
-    <img src="sis.jpg" alt="Sister" class="w-full h-56 object-cover">
-    <div class="p-4">
-      <h3 class="font-bold">My Sisters</h3>
-      <p>My sisters are my best friends — always fun, supportive, and caring.</p>
+  <!-- Sisters Carousel -->
+  <div class="bg-white rounded-xl shadow overflow-hidden p-4 fade-in">
+    <h3 class="font-bold mb-3 text-indigo-600">My Sisters</h3>
+    <div class="relative overflow-hidden">
+      <div class="flex animate-slide space-x-4">
+        <img src="sis1.jpg" alt="Sister 1" class="w-1/3 h-56 object-cover rounded-lg">
+        <img src="sis2.jpg" alt="Sister 2" class="w-1/3 h-56 object-cover rounded-lg">
+        <img src="sis3.jpg" alt="Sister 3" class="w-1/3 h-56 object-cover rounded-lg">
+      </div>
     </div>
+    <p class="mt-4">My sisters are my best friends — fun, supportive, and always there for me. They keep life joyful and full of laughter.</p>
   </div>
 
   <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden fade-in">
@@ -127,8 +142,8 @@
       <a href="https://www.instagram.com/louis_lynx1" target="_blank" class="text-pink-600 text-3xl hover:text-pink-700"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/256700210068" target="_blank" class="text-green-600 text-3xl hover:text-green-700"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p><b>Visit my other website</b></p>
-      <a href="http://www.louisproug.com">Tap me🥰</a>
+    <p>Visit my other Website 🤗</p>
+    <a href="http:www.louisproug.com">Tap me 😊</a>
   </section>  <!-- Footer -->  <footer class="bg-gray-800 text-gray-300 py-6 text-center">
     <p>© 2025 Mulinde Louis Anthony | All Rights Reserved</p>
   </footer>  <!-- Animation Script -->  <script>
@@ -143,4 +158,4 @@
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
   </script></body>
-</html>
+    </html>
